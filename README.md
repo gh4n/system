@@ -1,2 +1,2 @@
 # system
-System Notes
+Ongoing system notes for my laptop configuration
