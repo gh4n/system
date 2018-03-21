@@ -1,0 +1,165 @@
+---
+title: System Notes
+author: Grace Han
+output: pdf_document 
+---
+TO DO:
+colour code AUR vs arch package
+rethink formatting?
+
+# Rules
+1. Always think carefully before installation
+2. Never keep a cluttered system
+3. Use a virtual environment when you think there may be conflicts
+4. Understand commands before running them, that is - opt for man 'xyz' over 
+   some random command from the internet
+
+
+# Configuration Files
+1. ~/.vimrc
+2. ~/.config/i3/config
+3. ~/.config/i3/i3status.conf
+4. ~/.Xresources
+5. ~/.Xinitrc
+6. ~/.Xdefaults
+7. ~/.bashrc
+8. ~/.zshrc
+
+# System configuration
+
+## Setting up a recycling bin
+- I just deleted ~4 folders by mistake in ranger
+- :(, including project folder :(
+
+
+
+## Multimedia keys
+- Install package **light** from the AUR
+- add ```bindsym XF86MonBrightnessUp exec light -A 1``` and
+  ```bindsym XF86MonBrightnessDown exec light -U 1```
+  to **~/.config/i3/config**
+
+## Performance management
+- *TLP*
+- *Powertop*
+- *BBSwitch* & *Bumblebee*
+
+
+# Programming Languages
+
+## Python
+- Install **python-virtualenvwrapper** from the AUR
+- add ``` export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh``` to **~./zshrc**
+- reload shell
+
+### creating a new virtual env
+- cd to the project and run ```mkvirtualenv [project name]```
+- ```workon``` will show the list of virtual environments, empty if none
+- run ```workon [project name]``` to enter project virtual environment
+- run ```deactivate``` to exit
+- run ``rmvirtualenv [project name]``` to remove virtual environment and project
+## Java
+Jdk, Jvm
+
+
+## R 
+- Install Rstudio from AUR
+- Then run:
+```
+sudo R
+```
+```
+install.packages("rmarkdown")
+```
+- To compile rmarkdown to pdf install AUR package: **pandoc-citeproc**
+- For python code snippets that execute install R package **reticulate**
+- Note that ```install.packages()``` requires the package **tk** to be installed
+  You will see the error:
+  ```Error: .onLoad failed in loadNamespace() for 'tcltk', details (...)```
+
+
+# Other configuration
+## *urxvt*
+- install font packages (ttf-dejavu)
+- fix encoding
+
+
+## *zsh*
+- install zsh package
+- make default shell using
+  ```
+  chsh -s $(which zsh)
+  ```
+- log out and in again
+- run zsh configuration tool
+- install **oh my zsh** using:
+  ```
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  ```
+
+## *mupdf & zathura*
+- install **mupdf** package and **zathura** from the AUR
+- then install the **zathura-pdf-mupdf** from the AUR
+
+## *ranger*
+- install **ranger** package
+- install **w3m** package
+- add ```set preview_images true``` to: **~/.config/ranger/rc.conf**
+
+## *feh*
+- install **feh**
+- add ```exec --no-startup-id ~/.fehbg``` to **~/.config/i3/config** to make the wallpaper persistent through restart
+
+## **libreoffice**
+
+
+## **TeX**
+- install *texlive* package
+
+
+- *AUR package manager* Install one of these, using trizen
+- *feh* Install
+- *ranger* Install, set up image preview with w3m
+- *i3Status* Install package, set config file path in i3 config file
+- *Compton* Install compton, apply config
+- *rofi*
+- *xbindkeys* for the media keys
+- *i3lock*
+
+
+
+
+# Dependencies 
+
+- xorg-xrandr
+- xorg-xmodmap
+- compton
+- pulse audio
+- git
+- vundle
+- xbindkeys
+- alsa
+- light
+- intel xf86-video-intel(?)
+
+# Applications
+
+- vscode
+- ranger
+- vim
+- neofetch
+- mupdf/zathura
+- pycharm/intellij
+- Rstudio, Rmarkdown, R
+- Latex, texmaker
+- zsh
+- gparted
+- chrome
+- transmission cli
+- libreoffice?
+- vlc/mpv
+- lightscreen
+- sublime
+- weechat?
+- ncmpcpp, mpd
